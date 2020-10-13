@@ -127,5 +127,9 @@ const showReviews = () => {
 showReviews();
 
 const getUserReview = () => {
-  const result
-}
+  // const result = [];
+  for (let review of reviewsHotel) {
+    id: reviewsHotel.length + 1;
+    comment: `${reviewInput.innerHTML}`;
+  }
+};
