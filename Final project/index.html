@@ -7,9 +7,10 @@
     <!-- <link href="css/style.css" rel="stylesheet"> -->
   </head>
   <body>
-    <div id="review-display">
-      <h1>REVIEWS</h1>
-      <!-- <h2>Long</h2>
+    <div>
+      <div id="review-display">
+        <h1>REVIEWS</h1>
+        <!-- <h2>Long</h2>
       <h3>Rate: 4 stars</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum inventore
@@ -17,14 +18,27 @@
         Praesentium consectetur delectus sint vero libero alias illum ad tenetur
         explicabo!
       </p>-->
-    </div>
-    <div id="write-review">
-      <input
-        type="text"
-        placeholder="Write some reviews ..."
-        id="review-input"
-      />
-      <button id="submit-btn">Add review</button>
+      </div>
+      <div id="write-review">
+        <input type="checkbox" id="1" onclick="checkBoxFunc(this.id)" />
+        <label for="1">1 star</label>
+        <input type="checkbox" id="2" onclick="checkBoxFunc(this.id)" />
+        <label for="2">2 stars</label>
+        <input type="checkbox" id="3" onclick="checkBoxFunc(this.id)" />
+        <label for="3">3 stars</label>
+        <input type="checkbox" id="4" onclick="checkBoxFunc(this.id)" />
+        <label for="4">4 stars</label>
+        <input type="checkbox" id="5" onclick="checkBoxFunc(this.id)" />
+        <label for="5">5 stars</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Write some reviews ..."
+          id="review-input"
+        />
+        <br />
+        <button id="submit-btn">Add review</button>
+      </div>
     </div>
     <!-- <script src="/Final project/DB_example.js"></script> -->
     <script src="/Final project/testGround.js"></script>

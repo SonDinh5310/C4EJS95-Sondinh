@@ -58,8 +58,8 @@ const reviewsHotel = [
   },
   {
     id: 3,
-    userId: 2,
     hotelId: 1,
+    userId: 2,
     comment: "Good",
     star: 4,
   },
@@ -86,6 +86,15 @@ const booking = [
   },
 ];
 
+const currentLogin = [
+  {
+    id: 1,
+    name: "user name 1",
+    age: 18,
+    address: "Address 1",
+  },
+];
+
 const getHotelReviews = () => {
   const result = [];
   for (let review of reviewsHotel) {
@@ -106,30 +115,61 @@ const getUserById = (id) => {
 const getHotelById = (id) => {
   return hotel.find((data) => data.id === id);
 };
-const data = getHotelReviews();
-console.log("review Data ", data);
 
 const reviewDisplay = document.getElementById("review-display"),
   reviewInput = document.getElementById("review-input"),
   submitBtn = document.getElementById("submit-btn");
 
+const data = getHotelReviews();
+console.log("review Data ", data);
 const showReviews = () => {
-  getHotelReviews();
-  for (let review of data) {
+  reviewDisplay.innerHTML = "";
+  for (let review of getHotelReviews()) {
     reviewDisplay.innerHTML += `
     <h2>${review.user.name}</h2>
-      <h3>Rate: ${review.star} stars</h3>
-      <p>${review.comment}</p>
-    </div>
+    <h3>Rate: ${review.star} stars</h3>
+    <p>${review.comment}</p>
     `;
   }
 };
 showReviews();
 
 const getUserReview = () => {
-  // const result = [];
-  for (let review of reviewsHotel) {
-    id: reviewsHotel.length + 1;
-    comment: `${reviewInput.innerHTML}`;
+  const reviewData = {
+    id: reviewsHotel.length + 1,
+    hotelId: 1,
+    userId: currentLogin[0].id,
+    comment: reviewInput.value,
+    star: isChecked(),
+  };
+  reviewsHotel.push(reviewData);
+};
+
+const isChecked = () => {
+  for (let i = 1; i <= 5; i++) {
+    if (document.getElementById(i).checked === true) {
+      return i;
+    }
   }
 };
+const removeInput = () => {
+  for (let i = 1; i <= 5; i++) {
+    if (document.getElementById(i).checked === true) {
+      document.getElementById(i).checked = false;
+    }
+  }
+  reviewInput.value = "";
+};
+const checkBoxFunc = (id) => {
+  for (let i = 1; i <= 5; i++) {
+    document.getElementById(i).checked = false;
+  }
+  document.getElementById(id).checked = true;
+};
+
+submitBtn.addEventListener("click", () => {
+  getUserReview();
+  removeInput();
+  showReviews();
+  console.log(reviewsHotel);
+});
