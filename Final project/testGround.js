@@ -109,13 +109,23 @@ const getHotelById = (id) => {
 const data = getHotelReviews();
 console.log("review Data ", data);
 
-const reviewDisplay = document.getElementById("review-display");
+const reviewDisplay = document.getElementById("review-display"),
+  reviewInput = document.getElementById("review-input"),
+  submitBtn = document.getElementById("submit-btn");
 
 const showReviews = () => {
   getHotelReviews();
   for (let review of data) {
     reviewDisplay.innerHTML += `
-    <h1></h1>
+    <h2>${review.user.name}</h2>
+      <h3>Rate: ${review.star} stars</h3>
+      <p>${review.comment}</p>
+    </div>
     `;
   }
 };
+showReviews();
+
+const getUserReview = () => {
+  const result
+}
