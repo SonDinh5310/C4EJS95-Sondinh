@@ -118,7 +118,9 @@ const getHotelById = (id) => {
 
 const reviewDisplay = document.getElementById("review-display"),
   reviewInput = document.getElementById("review-input"),
-  submitBtn = document.getElementById("submit-btn");
+  submitBtn = document.getElementById("submit-btn"),
+  reviewBtn = document.getElementById("review-btn"),
+  reviewContainer = document.getElementById("review-container");
 
 const data = getHotelReviews();
 console.log("review Data ", data);
@@ -137,7 +139,7 @@ showReviews();
 const getUserReview = () => {
   const reviewData = {
     id: reviewsHotel.length + 1,
-    hotelId: 1,
+    hotelId: parseInt(reviewBtn.getAttribute("hotelId")),
     userId: currentLogin[0].id,
     comment: reviewInput.value,
     star: isChecked(),
@@ -167,9 +169,22 @@ const checkBoxFunc = (id) => {
   document.getElementById(id).checked = true;
 };
 
+const removeClass = (element, className) => {
+  element.classList.remove(className);
+};
+
+const addClass = (element, className) => {
+  element.classList.add(className);
+};
+
 submitBtn.addEventListener("click", () => {
   getUserReview();
   removeInput();
   showReviews();
   console.log(reviewsHotel);
+});
+
+reviewBtn.addEventListener("click", () => {
+  addClass(reviewBtn, "d-none");
+  removeClass(reviewContainer, "d-none");
 });
