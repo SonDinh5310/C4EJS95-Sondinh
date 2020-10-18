@@ -1,5 +1,5 @@
 const validateReview = () => {
-  if (reviewInput.value && isChecked()) {
+  if (reviewInput.value && isCheckedReview()) {
     submitBtn.disabled = false;
     addClass(warning, "d-none");
   } else {

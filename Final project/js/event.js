@@ -10,7 +10,7 @@ submitBtn.addEventListener("click", () => {
   pushData(getUserReview());
   removeInput();
   showReviews();
-  console.log(reviewsHotel);
+  submitBtn.disabled = true;
 });
 reviewBtn.addEventListener("click", () => {
   addClass(reviewBtn, "d-none");
