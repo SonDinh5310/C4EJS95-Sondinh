@@ -58,8 +58,8 @@ const reviewsHotel = [
   },
   {
     id: 3,
-    userId: 2,
     hotelId: 1,
+    userId: 2,
     comment: "Good",
     star: 4,
   },
@@ -83,5 +83,14 @@ const booking = [
     userId: 2,
     hotelId: 2,
     roomId: 2,
+  },
+];
+
+const currentLogin = [
+  {
+    id: 1,
+    name: "user name 1",
+    age: 18,
+    address: "Address 1",
   },
 ];
