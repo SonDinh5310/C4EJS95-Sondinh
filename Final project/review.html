@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/Final project/review.css" />
+    <script src="/Final project/js/bookingDB.js"></script>
+  </head>
+  <body>
+    <button id="review-btn" hotelId="1">Review</button>
+    <button id="back-btn" hotelId="1" class="d-none">Back</button>
+    <div id="review-container" class="d-none">
+      <div id="review-display">
+        <h1>REVIEWS</h1>
+      </div>
+      <div id="write-review">
+        <input type="checkbox" id="1" onclick="checkBoxFunc(this.id)" />
+        <label for="1">1 star</label>
+        <input type="checkbox" id="2" onclick="checkBoxFunc(this.id)" />
+        <label for="2">2 stars</label>
+        <input type="checkbox" id="3" onclick="checkBoxFunc(this.id)" />
+        <label for="3">3 stars</label>
+        <input type="checkbox" id="4" onclick="checkBoxFunc(this.id)" />
+        <label for="4">4 stars</label>
+        <input type="checkbox" id="5" onclick="checkBoxFunc(this.id)" />
+        <label for="5">5 stars</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Write some reviews ..."
+          id="review-input"
+        />
+        <br />
+        <p id="warning" class="d-none" style="color: red">
+          Review is missing, please complete it before submit
+        </p>
+        <button id="submit-btn" disabled>Add review</button>
+      </div>
+    </div>
+    <script src="/Final project/js/common.js"></script>
+    <script src="/Final project/js/validate.js"></script>
+    <script src="/Final project/js/event.js"></script>
+    <script src="/Final project/js/render.js"></script>
+  </body>
+</html>
